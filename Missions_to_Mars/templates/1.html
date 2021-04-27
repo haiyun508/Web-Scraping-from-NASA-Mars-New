@@ -1,0 +1,12 @@
+<div class="row"> -->
+         {% for hemisphere_image_urls in mars %} 
+          <div class="col-md-3">
+            <div class="card" style="width: 20rem">
+                <div class="card-body">
+                  <h4 class="card-title">{{ hemisphere_image_urls.title }}</h4>
+                  <p class="card-text">
+                      <img src="{{hemisphere_image_urls.img_url}}">
+                </div>
+              </div>
+          </div>
+          {% endfor %} 
