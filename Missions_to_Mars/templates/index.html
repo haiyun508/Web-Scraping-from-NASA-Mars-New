@@ -35,24 +35,19 @@
             </div>
         </div> 
         
-        
         <div class="row"> -->
+            {% for hemisphere_image_url in mars.hemisphere_image_urls %} 
              <div class="col-md-3">
                <div class="card" style="width: 20rem">
                    <div class="card-body">
-                     <h4 class="card-title">{{mars.hemisphere_image_urls[0][0]}}</h4>
-                     <img src="{{mars.hemisphere_image_urls[0][1]}}" style="width:200px" >
+                     <h4 class="card-title">{{hemisphere_image_url[0] }}</h4>
+                     <p class="card-text">
+                         <img src="{{hemisphere_image_url[1]}}" class="img-thumbnail">
                    </div>
                  </div>
              </div>
-             <div class="col-md-3">
-                <div class="card" style="width: 20rem">
-                    <div class="card-body">
-                      <h4 class="card-title">{{mars.hemisphere_image_urls[1][0]}}</h4>
-                      <img src="{{mars.hemisphere_image_urls[1][1]}}" style="width:200px" >
-                    </div>
-                  </div>
-              </div>
+             {% endfor %}
+        
              
     </div> 
 </body>
