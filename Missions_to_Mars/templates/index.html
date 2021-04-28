@@ -31,24 +31,22 @@
             </div>
             <div class="col-md-6 p-1 bg-light">
             <h5>Mars Facts</h5>
-            {{mars.table|safe}}
+            <table class="table table-bordered">{{mars.table|safe}}</table>
             </div>
         </div> 
         
         <div class="row"> -->
+            <h3 class="text-center">Mars Hemisphere</h3>
             {% for hemisphere_image_url in mars.hemisphere_image_urls %} 
              <div class="col-md-3">
                <div class="card" style="width: 20rem">
                    <div class="card-body">
-                     <h4 class="card-title">{{hemisphere_image_url[0] }}</h4>
-                     <p class="card-text">
-                         <img src="{{hemisphere_image_url[1]}}" class="img-thumbnail">
+                    <img src="{{hemisphere_image_url[1]}}" class="img-thumbnail" style="width:250px">
+                    <h5 class="card-title">{{hemisphere_image_url[0] }}</h5>
                    </div>
                  </div>
              </div>
-             {% endfor %}
-        
-             
+             {% endfor %}        
     </div> 
 </body>
 
