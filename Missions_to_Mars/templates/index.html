@@ -34,27 +34,26 @@
             {{mars.table|safe}}
             </div>
         </div> 
-
+        
+        
         <div class="row"> -->
-            {% for hemisphere_image_urls in mars %} 
              <div class="col-md-3">
                <div class="card" style="width: 20rem">
                    <div class="card-body">
-                     <h4 class="card-title">{{ hemisphere_image_urls.title }}</h4>
-                     <p class="card-text">
-                         <img src="{{hemisphere_image_urls.img_url}}">
+                     <h4 class="card-title">{{mars.hemisphere_image_urls[0][0]}}</h4>
+                     <img src="{{mars.hemisphere_image_urls[0][1]}}" style="width:200px" >
                    </div>
                  </div>
              </div>
-             {% endfor %} 
-        </div>
-
-
-
-
-
-
-
+             <div class="col-md-3">
+                <div class="card" style="width: 20rem">
+                    <div class="card-body">
+                      <h4 class="card-title">{{mars.hemisphere_image_urls[1][0]}}</h4>
+                      <img src="{{mars.hemisphere_image_urls[1][1]}}" style="width:200px" >
+                    </div>
+                  </div>
+              </div>
+             
     </div> 
 </body>
 

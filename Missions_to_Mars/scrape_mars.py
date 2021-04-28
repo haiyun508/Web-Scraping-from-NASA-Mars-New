@@ -76,26 +76,22 @@ def scrape():
         title=page.find("h3").text
         link=page.find("a",class_="itemLink product-item")["href"]
         page_url=hemisphere_url+link
-        print(title)
-        print(page_url)
         pages.append((title,page_url))
-    pages
-
     # loop through for pages for the hemisphere image links
+    hemisphere_image_urls=[]
     for(title,page_url)in pages:
         browser.visit(page_url)
         html=browser.html
         soup=BeautifulSoup(html, 'html.parser')
         link=soup.find("img",class_="wide-image")["src"]
         image_url=hemisphere_url+link
-        hemisphere_image_urls={"title":title,
-                        "img_url":image_url}
-        print(hemisphere_image_urls)
-        mars_data={"news_title":news_title,
+        hemisphere_image_urls.append((title,image_url))
+
+    mars_data={"news_title":news_title,
             "news_p":news_p,
             "featured_image_url":featured_image_url,
             "table":html_table,
-            "hemisphere_image_urls":hemisphere_image_urls,}
-        browser.quit()
-        return mars_data
+            "hemisphere_image_urls":hemisphere_image_urls}
+    browser.quit()
+    return mars_data
 
